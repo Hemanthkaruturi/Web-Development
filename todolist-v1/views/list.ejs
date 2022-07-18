@@ -1,0 +1,27 @@
+<%- include('header') -%>
+
+<body>
+
+  <div class="box" id='heading'>
+    <h1> Hello, this is <%=msg%> </h1>
+  </div>
+
+  <div class="box">
+    <% for (let i=0; i<newlistitems.length;i++) { %>
+    <div class="item">
+      <input type="checkbox" name="check" value="delete_this">
+      <p><%= newlistitems[i] %></p>
+    </div>
+    <% } %>
+
+    <form class="item" action=<%=route_to%> method="post">
+      <input type="text" name="new_item" placeholder="New item" value="" autocomplete="off">
+      <button type="submit" name="add" value="add">+</button>
+      <button type="submit" name="delete" value="delete">-</button>
+    </form>
+
+  </div>
+
+</body>
+
+<%- include('footer') -%>

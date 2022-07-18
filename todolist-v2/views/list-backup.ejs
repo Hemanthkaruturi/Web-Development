@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Todo list</title>
+  </head>
+  <body>
+
+    <% if (msg === 'Saturday' || msg === 'Sunday') { %>
+      <h1>Today is <span style="color: purple"> <%=msg%> </span> </h1>
+    <% } else { %>
+      <h1>Today is <span style="color: blue"> <%=msg%> </span> </h1>
+    <% } %>
+  </body>
+</html>
