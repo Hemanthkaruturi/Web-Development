@@ -3,9 +3,11 @@
 <h1>Home</h1>
 <p> <%=homeText%> </p>
 
-<% for (let i=0;i<postKey.length;i++) { %>
-  <h1> <%=newContent[postKey[i]][0]%> </h1>
-  <p> <%=newContent[postKey[i]][1].slice(0,150)%>... <a href="/posts/<%=postKey[i]%>" >Read More</a> </p>
-<% } %>
+<% posts.forEach((post) => { %>
+  <h1><%=post.postTitle%></h1>
+  <p>
+    <%=post.postContent.slice(0,150)%>... <a href="/posts/<%=post.postUrl%>" >Read More</a>
+  </p>
+<% }) %>
 
 <%- include('partials/footer') -%>

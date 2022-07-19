@@ -1,5 +1,12 @@
 const date = require(__dirname+'/date.js');
 
+// change port if required
+// const port = 3000;
+let port = process.env.PORT
+if (port == null || port == "") {
+  port = 3000;
+}
+
 // import lodash
 const _ = require("lodash")
 
@@ -52,9 +59,6 @@ app.use(express.static("public"));
 // create body-parser
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}))
-
-// change port if required
-const port = 3000;
 
 // Initial list items -- get default items from db
 // let list_items = []
